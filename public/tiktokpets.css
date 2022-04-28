@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Inter:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    align-items: center;
+}
+
+#hori_title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 80%;
+    max-width: 450px;
+}
+
+#my_videos {
+    justify-self: flex-end;
+    margin-left: auto;
+}
+
+.title_text {
+    font-family: 'Boogaloo', cursive;
+    font-size: 32px;
+    height: 100%;
+    justify-self: center;
+}
+
+.button {
+    display: flex;
+    background-color: rgba(238, 29, 82, 0.9);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button_text {
+    color: #F1F1F1;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#big_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background: linear-gradient(110deg, rgba(238, 29, 82, 0.9), #69C9D0);
+    margin: 25px;
+    width: 75%;
+    max-width: 450px;
+    padding: 15px;
+    padding-bottom: 50px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#submit_video {
+    font-size: 20px;
+    font-weight: 600;
+    color: #F1F1F1;
+    margin: 30px;
+}
+
+.input_area {
+    margin: 20px;
+    width: 80%;
+}
+
+.input_label {
+    color: #F1F1F1;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#big_box input {
+    border-radius: 15px;
+    width: 100%;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px solid #69C9D0;
+}
+
+#var_nick {
+    color: rgba(238, 29, 82, 0.9);
+}
+
+#response_area {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+/*Tablet*/
+@media (min-width: 480px) and (max-width: 900px){
+    .title_text {
+        font-size: 48px;
+    }
+    #submit_video {
+        font-size: 24px;
+    }
+    .button {
+        height: 60px;
+        width: 140px;
+    }
+    .button_text {
+        font-size: 20px;
+    }
+    #big_box {
+        padding: 30px;
+        padding-bottom: 50px;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 901px){
+    .title_text {
+        font-size: 48px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #index_title {
+        padding-left: 140px;
+    }
+    #my_videos{
+        margin-left: 0%;
+    }
+    #submit_video {
+        font-size: 24px;
+    }
+    .button {
+        height: 60px;
+        width: 140px;
+    }
+    .button_text {
+        font-size: 20px;
+    }
+    #big_box {
+        padding: 30px;
+        padding-bottom: 50px;
+    }
+    #hori_title{
+        max-width: 1512px;
+    }
+}
