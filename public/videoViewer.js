@@ -13,10 +13,12 @@ let divElmt = document.getElementById("tiktokDiv");
 reloadButton.addEventListener("click", go_back);
 
 // add the blockquote element that TikTok wants to load the video into
-fetch("/getMostRecent").then(function(msg) {return msg.text();}).then(function(txt) {
-    let obj = JSON.parse(txt);
-    addVideo(obj.url, divElmt);
-}).then(loadTheVideos).catch((err)=>{console.log("ERROR", err)});
+if (window.innerWidth >= 325) {
+    fetch("/getMostRecent").then(function(msg) {return msg.text();}).then(function(txt) {
+        let obj = JSON.parse(txt);
+        addVideo(obj.url, divElmt);
+    }).then(loadTheVideos).catch((err)=>{console.log("ERROR", err)});
+}
 
 // addVideo(example, divElmt);
 
@@ -49,8 +51,8 @@ function loadTheVideos() {
 // makes a script node which loads the TikTok embed script
 function newTikTokScript() {
   let script = document.createElement("script");
-  script.src = "https://www.tiktok.com/embed.js"
-  script.id = "tiktokScript"
+  script.src = "https://www.tiktok.com/embed.js";
+  script.id = "tiktokScript";
   return script;
 }
 
@@ -82,5 +84,5 @@ function reloadVideo () {
 }
 
 function go_back() {
-    window.location = "/tiktokpets.html";
+    window.location = "/my_videos.html";
 }

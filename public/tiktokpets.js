@@ -1,5 +1,14 @@
 'use strict';
 
+let myvideosButton = document.getElementById("my_videos");
+
+// set up button
+myvideosButton.addEventListener("click", go_back);
+
+function go_back() {
+    window.location = "/my_videos.html";
+}
+
 async function sendPostRequest(url,data) {
     console.log("about to send post request");
     let response = await fetch(url, {

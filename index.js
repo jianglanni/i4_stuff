@@ -4,7 +4,7 @@
 // include express
 const express = require("express");
 const bodyParser = require('body-parser');
-const db = require('./sqlWrap')
+const db = require('./sqlWrap');
 // create object to interface with express
 const app = express();
 
@@ -22,14 +22,13 @@ app.use(express.static("public"));
 
 // if no file specified, return the main page
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/public/tiktokpets.html");
+  response.sendFile(__dirname + "/public/my_videos.html");
 });
 
 app.use(bodyParser.text());
 
 app.post("/videoData", function(req, res, next) {
     let bodhi = JSON.parse(req.body);
-    console.log(typeof(bodhi));
     console.log("Received\n" + bodhi.nickname);
     update_and_insert(bodhi).then((msg) => {res.send(msg);}).catch((err) => {console.log("ERROR", err)});
 });
@@ -48,7 +47,8 @@ app.get("/getList", function(req, res, next) {
 
 app.post("/deleteEntry", function(req, res, next) {
     let row = req.body; //which is already a string here.
-    db.run("delete from VideoTable where rowIdNum="+row).then(()=>{console.log("done");}).catch((err)=>{console.log("ERROR", err)});
+    console.log("Bye! row", row);
+    db.run("delete from VideoTable where rowIdNum="+row).then(()=>{res.send("done");}).catch((err)=>{console.log("ERROR", err)});
 });
 
 // Need to add response if page not found!

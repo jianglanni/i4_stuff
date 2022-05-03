@@ -12,11 +12,22 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content:space-around;
     margin-bottom: 25px;
     margin-top: 25px;
-    width: 80%;
-    max-width: 450px;
+    width: 100%;
+    /*max-width: 450px;*/
+}
+
+/*From official solution*/
+.headerLeft{
+    display: none;
+}
+
+
+#my_videos {
+    justify-self: flex-end;
+    /*margin-left: auto;*/
 }
 
 #my_videos {
@@ -102,8 +113,70 @@ body {
     margin-bottom: 50px;
 }
 
+#video-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+.submitted_tile{
+    /*min-width: 400px;
+    max-width: 700px;*/
+    max-width: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.single_video {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.empty_input {
+    border-radius: 15px;
+    max-width: 70vw;
+    min-width: 50vw;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px dashed gray;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.delete_button {
+    font-family: 'Boogaloo', cursive;
+    font-size: 44px;
+    color: red;
+    margin-left: 10px;
+}
+#my_videos_instruction {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#play-game{
+  margin-bottom:120px;
+  margin-top:15px;
+}
+
 /*Tablet*/
 @media (min-width: 480px) and (max-width: 900px){
+    .hori_title{
+        justify-content: space-between;
+    }
+    .headerLeft{
+        display: block;
+    }
     .title_text {
         font-size: 48px;
     }
@@ -121,10 +194,30 @@ body {
         padding: 30px;
         padding-bottom: 50px;
     }
+    .delete_button{
+        font-size: 60px;
+    }
+  
+    .submitted_tile{
+        max-width: 650px;
+    }
+
+    #my_videos_instruction {
+        font-size: 24px;
+    }
+    .headerCenter {
+        padding-left: 140px;
+    }
 }
 
 /*Desktop*/
 @media (min-width: 901px){
+    .hori_title{
+        justify-content: space-between;
+    }
+    .headerLeft{
+        display:block;
+    }
     .title_text {
         font-size: 48px;
         margin-left: auto;
@@ -152,5 +245,23 @@ body {
     }
     #hori_title{
         max-width: 1512px;
+    }
+    .delete_button {
+        font-size: 64px;
+    }
+
+    #video-area{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #my_videos_instruction {
+        font-size: 24px;
+    }
+    .empty_input{
+      max-width: 50vw;
+      min-width: 40vw;
+      
     }
 }
