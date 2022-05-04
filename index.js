@@ -72,7 +72,7 @@ async function insertVideo(v) {
 async function dumpTable() {
     const sql = "select * from VideoTable"
   
-    let result = await db.all(sql)
+    let result = await db.all(sql);
     return result;
 }
 
