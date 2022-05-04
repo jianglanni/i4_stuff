@@ -47,8 +47,12 @@ function trigger() {
     sendPostRequest("/videoData", JSON.stringify(jsonPack)).then(function (data) {
     console.log("got back the following string");
     console.log(data); 
-    sessionStorage.setItem("nick", nickname_box);
-    window.location = "/videoViewer.html";
+    if (data == "Database Full!") {
+        alert(data);
+        window.location = "/my_videos.html";
+    } else {
+        window.location = "/videoViewer.html";
+    }
   })
   .catch(function (error) {
      console.error('Error:', error);

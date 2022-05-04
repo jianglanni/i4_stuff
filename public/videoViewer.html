@@ -2,6 +2,10 @@
 
 <html lang=en>
 
+<!DOCTYPE html>
+
+<html lang=en>
+
 <head>
   <title>TTPets Video Viewer</title>
   <meta charset="utf-8" />
@@ -17,13 +21,20 @@
     <p class="title_text">Upload Successful!</p>
   </div>
   <main>
-    <div class="video">
+    <div id="viewerbg">
         <div id="tiktokDiv"></div>
+        <p class="button_text" id="var_nick"></p>
     </div>
-    
   </main>
-  <div class="button" id="viewer">
+  <div id="reload_button">&#8635</div>
+  <div class="bottom_placement"><!--empty slot to keep items on center-->
+        <p class="title_text">&nbsp;</p>
+  </div>
+  <div class="vw_continue">
+    <div class="button" id="viewer">
         <p class="button_text">Continue</p>
+    </div>
+    <div id="vwplaceholder"></div>
   </div>
   
   </body>

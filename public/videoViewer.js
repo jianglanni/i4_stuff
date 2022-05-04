@@ -16,8 +16,14 @@ reloadButton.addEventListener("click", go_back);
 if (window.innerWidth >= 325) {
     fetch("/getMostRecent").then(function(msg) {return msg.text();}).then(function(txt) {
         let obj = JSON.parse(txt);
+        document.getElementById("var_nick").textContent = obj.nickname;
         addVideo(obj.url, divElmt);
+        document.getElementById("reload_button").addEventListener("click", ()=>{reloadVideo(obj.url);});
     }).then(loadTheVideos).catch((err)=>{console.log("ERROR", err)});
+} else {
+    document.getElementById("reload_button").textContent = "";
+    let bg = document.getElementById("viewerbg");
+    bg.style.backgroundColor="#FFFFFF";
 }
 
 // addVideo(example, divElmt);
@@ -58,7 +64,7 @@ function newTikTokScript() {
 
 // the reload button; takes out the blockquote and the scripts, and puts it all back in again.
 // the browser thinks it's a new video and reloads it
-function reloadVideo () {
+function reloadVideo (link) {
   
   // get the two blockquotes
   let blockquotes 
@@ -79,7 +85,7 @@ function reloadVideo () {
   body.removeChild(script1);
   body.removeChild(script2);
 
-  addVideo(example,divElmt);
+  addVideo(link, divElmt);
   loadTheVideos();
 }
 
