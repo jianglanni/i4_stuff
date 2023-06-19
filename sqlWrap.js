@@ -1,4 +1,4 @@
-/* Wraps sqlite commands get,use, and all, so that they use Promises, and can be used with async-await */
+ /* Wraps sqlite commands get,use, and all, so that they use Promises, and can be used with async-await */
 
 /* Also creates the database; you will need to configure it here */
 
